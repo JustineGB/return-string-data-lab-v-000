@@ -10,9 +10,9 @@ $(function() {
     var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(description) {
       $.get("/products/" + id + "/inventory", function(inventory) {
-        var availableInventory = "Available";
+        var productInventory = "Available";
         if(inventory === "false"){
-          availableInventory = "Sold Out";
+          productInventory = "Sold Out";
         }
         var descript = "<p>" + description + "</p><p>" + invent + "</p>";
         $("#product-" + id).html(descript);
